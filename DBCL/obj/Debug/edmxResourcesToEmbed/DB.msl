@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="Factories">
+      <EntityTypeMapping TypeName="DBModel.Factory">
+        <MappingFragment StoreEntitySet="Factory">
+          <ScalarProperty Name="供应商编号" ColumnName="供应商编号" />
+          <ScalarProperty Name="供应商名称" ColumnName="供应商名称" />
+          <ScalarProperty Name="联系人" ColumnName="联系人" />
+          <ScalarProperty Name="联系电话" ColumnName="联系电话" />
+          <ScalarProperty Name="供应商地址" ColumnName="供应商地址" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests">
+      <EntityTypeMapping TypeName="DBModel.Guest">
+        <MappingFragment StoreEntitySet="Guest">
+          <ScalarProperty Name="客户编号" ColumnName="客户编号" />
+          <ScalarProperty Name="客户名称" ColumnName="客户名称" />
+          <ScalarProperty Name="联系人" ColumnName="联系人" />
+          <ScalarProperty Name="联系电话" ColumnName="联系电话" />
+          <ScalarProperty Name="邮箱" ColumnName="邮箱" />
+          <ScalarProperty Name="联系地址" ColumnName="联系地址" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manges">
+      <EntityTypeMapping TypeName="DBModel.mange">
+        <MappingFragment StoreEntitySet="mange">
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order1">
+      <EntityTypeMapping TypeName="DBModel.Order1">
+        <MappingFragment StoreEntitySet="Order1">
+          <ScalarProperty Name="订单编号" ColumnName="订单编号" />
+          <ScalarProperty Name="商品名称" ColumnName="商品名称" />
+          <ScalarProperty Name="购货数量" ColumnName="购货数量" />
+          <ScalarProperty Name="购货日期" ColumnName="购货日期" />
+          <ScalarProperty Name="零售价" ColumnName="零售价" />
+          <ScalarProperty Name="供应商" ColumnName="供应商" />
+          <ScalarProperty Name="所属仓库" ColumnName="所属仓库" />
+          <ScalarProperty Name="折扣率" ColumnName="折扣率" />
+          <ScalarProperty Name="折扣额" ColumnName="折扣额" />
+          <ScalarProperty Name="已付款金额" ColumnName="已付款金额" />
+          <ScalarProperty Name="总金额" ColumnName="总金额" />
+          <ScalarProperty Name="付款方式" ColumnName="付款方式" />
+          <ScalarProperty Name="未付款金额" ColumnName="未付款金额" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrRejects">
+      <EntityTypeMapping TypeName="DBModel.OrReject">
+        <MappingFragment StoreEntitySet="OrReject">
+          <ScalarProperty Name="订单编号" ColumnName="订单编号" />
+          <ScalarProperty Name="商品名称" ColumnName="商品名称" />
+          <ScalarProperty Name="退货数量" ColumnName="退货数量" />
+          <ScalarProperty Name="退货日期" ColumnName="退货日期" />
+          <ScalarProperty Name="供应商" ColumnName="供应商" />
+          <ScalarProperty Name="所属仓库" ColumnName="所属仓库" />
+          <ScalarProperty Name="应退款金额" ColumnName="应退款金额" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pays">
+      <EntityTypeMapping TypeName="DBModel.pay">
+        <MappingFragment StoreEntitySet="pay">
+          <ScalarProperty Name="结算号" ColumnName="结算号" />
+          <ScalarProperty Name="结算账户" ColumnName="结算账户" />
+          <ScalarProperty Name="付款金额" ColumnName="付款金额" />
+          <ScalarProperty Name="结算方式" ColumnName="结算方式" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="DBModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="商品编号" ColumnName="商品编号" />
+          <ScalarProperty Name="商品名称" ColumnName="商品名称" />
+          <ScalarProperty Name="商品单价" ColumnName="商品单价" />
+          <ScalarProperty Name="零售价" ColumnName="零售价" />
+          <ScalarProperty Name="联系地址" ColumnName="联系地址" />
+          <ScalarProperty Name="当前库存" ColumnName="当前库存" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repertories">
+      <EntityTypeMapping TypeName="DBModel.Repertory">
+        <MappingFragment StoreEntitySet="Repertory">
+          <ScalarProperty Name="仓库编号" ColumnName="仓库编号" />
+          <ScalarProperty Name="仓库名称" ColumnName="仓库名称" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salaries">
+      <EntityTypeMapping TypeName="DBModel.salary">
+        <MappingFragment StoreEntitySet="salary">
+          <ScalarProperty Name="结算号" ColumnName="结算号" />
+          <ScalarProperty Name="结算账户" ColumnName="结算账户" />
+          <ScalarProperty Name="收款金额" ColumnName="收款金额" />
+          <ScalarProperty Name="结算方式" ColumnName="结算方式" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sells">
+      <EntityTypeMapping TypeName="DBModel.Sell">
+        <MappingFragment StoreEntitySet="Sell">
+          <ScalarProperty Name="订单编号" ColumnName="订单编号" />
+          <ScalarProperty Name="商品名称" ColumnName="商品名称" />
+          <ScalarProperty Name="销货数量" ColumnName="销货数量" />
+          <ScalarProperty Name="销货日期" ColumnName="销货日期" />
+          <ScalarProperty Name="客户编号" ColumnName="客户编号" />
+          <ScalarProperty Name="客户名称" ColumnName="客户名称" />
+          <ScalarProperty Name="所属仓库" ColumnName="所属仓库" />
+          <ScalarProperty Name="已付款金额" ColumnName="已付款金额" />
+          <ScalarProperty Name="总金额" ColumnName="总金额" />
+          <ScalarProperty Name="付款方式" ColumnName="付款方式" />
+          <ScalarProperty Name="未付款金额" ColumnName="未付款金额" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sell_Reject">
+      <EntityTypeMapping TypeName="DBModel.Sell_Reject">
+        <MappingFragment StoreEntitySet="Sell_Reject">
+          <ScalarProperty Name="订单编号" ColumnName="订单编号" />
+          <ScalarProperty Name="商品名称" ColumnName="商品名称" />
+          <ScalarProperty Name="退货数量" ColumnName="退货数量" />
+          <ScalarProperty Name="退货日期" ColumnName="退货日期" />
+          <ScalarProperty Name="客户编号" ColumnName="客户编号" />
+          <ScalarProperty Name="客户名称" ColumnName="客户名称" />
+          <ScalarProperty Name="所属仓库" ColumnName="所属仓库" />
+          <ScalarProperty Name="应退款金额" ColumnName="应退款金额" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="DBModel.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="入库单号" ColumnName="入库单号" />
+          <ScalarProperty Name="仓库编号" ColumnName="仓库编号" />
+          <ScalarProperty Name="仓库名称" ColumnName="仓库名称" />
+          <ScalarProperty Name="商品编号" ColumnName="商品编号" />
+          <ScalarProperty Name="商品名称" ColumnName="商品名称" />
+          <ScalarProperty Name="库存量" ColumnName="库存量" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

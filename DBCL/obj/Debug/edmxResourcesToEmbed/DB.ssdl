@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Factory">
+    <Key>
+      <PropertyRef Name="供应商编号" />
+    </Key>
+    <Property Name="供应商编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="供应商名称" Type="nvarchar" MaxLength="20" />
+    <Property Name="联系人" Type="nvarchar" MaxLength="10" />
+    <Property Name="联系电话" Type="nvarchar" MaxLength="20" />
+    <Property Name="供应商地址" Type="nvarchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="Guest">
+    <Key>
+      <PropertyRef Name="客户编号" />
+    </Key>
+    <Property Name="客户编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="客户名称" Type="nvarchar" MaxLength="20" />
+    <Property Name="联系人" Type="nvarchar" MaxLength="10" />
+    <Property Name="联系电话" Type="nvarchar" MaxLength="20" />
+    <Property Name="邮箱" Type="nvarchar" MaxLength="20" />
+    <Property Name="联系地址" Type="nvarchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="mange">
+    <Key>
+      <PropertyRef Name="user_name" />
+    </Key>
+    <Property Name="user_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="user_password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="user_type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="user_phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="user_email" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Order1">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="商品名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="购货数量" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="购货日期" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="零售价" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="供应商" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="所属仓库" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="折扣率" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="折扣额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="已付款金额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="总金额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="付款方式" Type="nvarchar" MaxLength="20" />
+    <Property Name="未付款金额" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="OrReject">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="商品名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="退货数量" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="退货日期" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="供应商" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="所属仓库" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="应退款金额" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pay">
+    <Key>
+      <PropertyRef Name="结算号" />
+    </Key>
+    <Property Name="结算号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="结算账户" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="付款金额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="结算方式" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="商品编号" />
+    </Key>
+    <Property Name="商品编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="商品名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="商品单价" Type="float" Nullable="false" />
+    <Property Name="零售价" Type="float" Nullable="false" />
+    <Property Name="联系地址" Type="nvarchar" MaxLength="40" />
+    <Property Name="当前库存" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Repertory">
+    <Key>
+      <PropertyRef Name="仓库编号" />
+    </Key>
+    <Property Name="仓库编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="仓库名称" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="salary">
+    <Key>
+      <PropertyRef Name="结算号" />
+    </Key>
+    <Property Name="结算号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="结算账户" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="收款金额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="结算方式" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Sell">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="商品名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="销货数量" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="销货日期" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="客户编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="客户名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="所属仓库" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="已付款金额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="总金额" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="付款方式" Type="nvarchar" MaxLength="20" />
+    <Property Name="未付款金额" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Sell_Reject">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="商品名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="退货数量" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="退货日期" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="客户编号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="客户名称" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="所属仓库" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="应退款金额" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="入库单号" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="入库单号" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="仓库编号" Type="nvarchar" MaxLength="20" />
+    <Property Name="仓库名称" Type="nvarchar" MaxLength="20" />
+    <Property Name="商品编号" Type="nvarchar" MaxLength="20" />
+    <Property Name="商品名称" Type="nvarchar" MaxLength="20" />
+    <Property Name="库存量" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Factory" EntityType="Self.Factory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mange" EntityType="Self.mange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order1" EntityType="Self.Order1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrReject" EntityType="Self.OrReject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pay" EntityType="Self.pay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Repertory" EntityType="Self.Repertory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="salary" EntityType="Self.salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sell" EntityType="Self.Sell" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sell_Reject" EntityType="Self.Sell_Reject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

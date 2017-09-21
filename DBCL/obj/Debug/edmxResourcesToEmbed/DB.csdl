@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Factory">
+    <Key>
+      <PropertyRef Name="供应商编号" />
+    </Key>
+    <Property Name="供应商编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="供应商名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="联系人" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="联系电话" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="供应商地址" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Guest">
+    <Key>
+      <PropertyRef Name="客户编号" />
+    </Key>
+    <Property Name="客户编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="客户名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="联系人" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="联系电话" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="邮箱" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="联系地址" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mange">
+    <Key>
+      <PropertyRef Name="user_name" />
+    </Key>
+    <Property Name="user_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order1">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="商品名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="购货数量" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="购货日期" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="零售价" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="供应商" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="所属仓库" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="折扣率" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="折扣额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="已付款金额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="总金额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="付款方式" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="未付款金额" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="OrReject">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="商品名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="退货数量" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="退货日期" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="供应商" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="所属仓库" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="应退款金额" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pay">
+    <Key>
+      <PropertyRef Name="结算号" />
+    </Key>
+    <Property Name="结算号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="结算账户" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="付款金额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="结算方式" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="商品编号" />
+    </Key>
+    <Property Name="商品编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="商品名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="商品单价" Type="Double" Nullable="false" />
+    <Property Name="零售价" Type="Double" Nullable="false" />
+    <Property Name="联系地址" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="当前库存" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Repertory">
+    <Key>
+      <PropertyRef Name="仓库编号" />
+    </Key>
+    <Property Name="仓库编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="仓库名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="salary">
+    <Key>
+      <PropertyRef Name="结算号" />
+    </Key>
+    <Property Name="结算号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="结算账户" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="收款金额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="结算方式" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sell">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="商品名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="销货数量" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="销货日期" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="客户编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="客户名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="所属仓库" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="已付款金额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="总金额" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="付款方式" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="未付款金额" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Sell_Reject">
+    <Key>
+      <PropertyRef Name="订单编号" />
+      <PropertyRef Name="商品名称" />
+    </Key>
+    <Property Name="订单编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="商品名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="退货数量" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="退货日期" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="客户编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="客户名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="所属仓库" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="应退款金额" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="入库单号" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="入库单号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="仓库编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="仓库名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="商品编号" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="商品名称" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="库存量" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Factories" EntityType="Self.Factory" />
+    <EntitySet Name="Guests" EntityType="Self.Guest" />
+    <EntitySet Name="manges" EntityType="Self.mange" />
+    <EntitySet Name="Order1" EntityType="Self.Order1" />
+    <EntitySet Name="OrRejects" EntityType="Self.OrReject" />
+    <EntitySet Name="pays" EntityType="Self.pay" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Repertories" EntityType="Self.Repertory" />
+    <EntitySet Name="salaries" EntityType="Self.salary" />
+    <EntitySet Name="Sells" EntityType="Self.Sell" />
+    <EntitySet Name="Sell_Reject" EntityType="Self.Sell_Reject" />
+    <EntitySet Name="Stores" EntityType="Self.Store" />
+  </EntityContainer>
+</Schema>
